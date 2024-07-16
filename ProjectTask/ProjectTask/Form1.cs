@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace ProjectTask
 {
     public partial class Form1 : Form
@@ -17,10 +18,36 @@ namespace ProjectTask
             InitializeComponent();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            string scriptPath = Input.Text; 
 
+            
+            if (File.Exists(scriptPath))
+            {
+                
+                var startInfo = new ProcessStartInfo
+                {
+                    FileName = "powershell.exe",
+                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\"",
+                    UseShellExecute = false
+                   
+
+                };
+
+                Process.Start(startInfo);
+                //Console.Read();
+                
+            }
+            else
+            {
+                MessageBox.Show("Fișierul nu există sau calea este incorectă.");
+            }
         }
+
+
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -43,6 +70,7 @@ namespace ProjectTask
             {
                 Input.Text = fdlg.FileName;
             }
+            
         }
 
         private void ExecuteCommand_Click(object sender, EventArgs e)
@@ -51,6 +79,16 @@ namespace ProjectTask
         }
 
         private void OutputCmd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmdBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BrowseBat_Click(object sender, EventArgs e)
         {
 
         }

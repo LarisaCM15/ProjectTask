@@ -35,6 +35,7 @@
             this.CmdBox = new System.Windows.Forms.TextBox();
             this.ExecuteCommand = new System.Windows.Forms.Button();
             this.OutputCmd = new System.Windows.Forms.TextBox();
+            this.BrowseBat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExecuteScript
@@ -86,16 +87,17 @@
             this.CmdBox.Name = "CmdBox";
             this.CmdBox.Size = new System.Drawing.Size(259, 21);
             this.CmdBox.TabIndex = 4;
-            this.CmdBox.Text = "Here you write just one cmd command";
+            this.CmdBox.Text = "Here you enter the path to .bat script";
             this.CmdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CmdBox.TextChanged += new System.EventHandler(this.CmdBox_TextChanged);
             // 
             // ExecuteCommand
             // 
-            this.ExecuteCommand.Location = new System.Drawing.Point(383, 283);
+            this.ExecuteCommand.Location = new System.Drawing.Point(485, 281);
             this.ExecuteCommand.Name = "ExecuteCommand";
-            this.ExecuteCommand.Size = new System.Drawing.Size(145, 23);
+            this.ExecuteCommand.Size = new System.Drawing.Size(94, 23);
             this.ExecuteCommand.TabIndex = 5;
-            this.ExecuteCommand.Text = "ExecuteCommand";
+            this.ExecuteCommand.Text = "ExecueBatScript";
             this.ExecuteCommand.UseVisualStyleBackColor = true;
             this.ExecuteCommand.Click += new System.EventHandler(this.ExecuteCommand_Click);
             // 
@@ -110,11 +112,22 @@
             this.OutputCmd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.OutputCmd.TextChanged += new System.EventHandler(this.OutputCmd_TextChanged);
             // 
+            // BrowseBat
+            // 
+            this.BrowseBat.Location = new System.Drawing.Point(383, 281);
+            this.BrowseBat.Name = "BrowseBat";
+            this.BrowseBat.Size = new System.Drawing.Size(75, 23);
+            this.BrowseBat.TabIndex = 7;
+            this.BrowseBat.Text = "BrowseBat";
+            this.BrowseBat.UseVisualStyleBackColor = true;
+            this.BrowseBat.Click += new System.EventHandler(this.BrowseBat_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 534);
+            this.Controls.Add(this.BrowseBat);
             this.Controls.Add(this.OutputCmd);
             this.Controls.Add(this.ExecuteCommand);
             this.Controls.Add(this.CmdBox);
@@ -138,6 +151,7 @@
         private System.Windows.Forms.TextBox CmdBox;
         private System.Windows.Forms.Button ExecuteCommand;
         private System.Windows.Forms.TextBox OutputCmd;
+        private System.Windows.Forms.Button BrowseBat;
     }
 }
 
