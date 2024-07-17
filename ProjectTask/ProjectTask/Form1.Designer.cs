@@ -30,12 +30,12 @@
         {
             this.ExecuteScript = new System.Windows.Forms.Button();
             this.Input = new System.Windows.Forms.TextBox();
-            this.Output = new System.Windows.Forms.TextBox();
             this.BrowseButton = new System.Windows.Forms.Button();
             this.CmdBox = new System.Windows.Forms.TextBox();
             this.ExecuteCommand = new System.Windows.Forms.Button();
             this.OutputCmd = new System.Windows.Forms.TextBox();
             this.BrowseBat = new System.Windows.Forms.Button();
+            this.OutputPS = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ExecuteScript
@@ -50,25 +50,14 @@
             // 
             // Input
             // 
-            this.Input.Location = new System.Drawing.Point(91, 52);
+            this.Input.Location = new System.Drawing.Point(80, 52);
             this.Input.Multiline = true;
             this.Input.Name = "Input";
-            this.Input.Size = new System.Drawing.Size(273, 21);
+            this.Input.Size = new System.Drawing.Size(284, 21);
             this.Input.TabIndex = 1;
             this.Input.Text = "Enter the path to PowerShell script...";
             this.Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Input.TextChanged += new System.EventHandler(this.Input_TextChanged);
-            // 
-            // Output
-            // 
-            this.Output.Location = new System.Drawing.Point(80, 102);
-            this.Output.Multiline = true;
-            this.Output.Name = "Output";
-            this.Output.Size = new System.Drawing.Size(284, 114);
-            this.Output.TabIndex = 2;
-            this.Output.Text = "Here you will see the output for your script";
-            this.Output.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Output.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // BrowseButton
             // 
@@ -82,10 +71,10 @@
             // 
             // CmdBox
             // 
-            this.CmdBox.Location = new System.Drawing.Point(80, 283);
+            this.CmdBox.Location = new System.Drawing.Point(80, 291);
             this.CmdBox.Multiline = true;
             this.CmdBox.Name = "CmdBox";
-            this.CmdBox.Size = new System.Drawing.Size(259, 21);
+            this.CmdBox.Size = new System.Drawing.Size(284, 21);
             this.CmdBox.TabIndex = 4;
             this.CmdBox.Text = "Here you enter the path to .bat script";
             this.CmdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -93,7 +82,7 @@
             // 
             // ExecuteCommand
             // 
-            this.ExecuteCommand.Location = new System.Drawing.Point(485, 281);
+            this.ExecuteCommand.Location = new System.Drawing.Point(485, 291);
             this.ExecuteCommand.Name = "ExecuteCommand";
             this.ExecuteCommand.Size = new System.Drawing.Size(94, 23);
             this.ExecuteCommand.TabIndex = 5;
@@ -106,7 +95,7 @@
             this.OutputCmd.Location = new System.Drawing.Point(80, 355);
             this.OutputCmd.Multiline = true;
             this.OutputCmd.Name = "OutputCmd";
-            this.OutputCmd.Size = new System.Drawing.Size(259, 115);
+            this.OutputCmd.Size = new System.Drawing.Size(284, 93);
             this.OutputCmd.TabIndex = 6;
             this.OutputCmd.Text = "Here you will see the output for your cmd command";
             this.OutputCmd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -114,7 +103,7 @@
             // 
             // BrowseBat
             // 
-            this.BrowseBat.Location = new System.Drawing.Point(383, 281);
+            this.BrowseBat.Location = new System.Drawing.Point(383, 291);
             this.BrowseBat.Name = "BrowseBat";
             this.BrowseBat.Size = new System.Drawing.Size(75, 23);
             this.BrowseBat.TabIndex = 7;
@@ -122,17 +111,28 @@
             this.BrowseBat.UseVisualStyleBackColor = true;
             this.BrowseBat.Click += new System.EventHandler(this.BrowseBat_Click);
             // 
+            // OutputPS
+            // 
+            this.OutputPS.Location = new System.Drawing.Point(80, 139);
+            this.OutputPS.Multiline = true;
+            this.OutputPS.Name = "OutputPS";
+            this.OutputPS.Size = new System.Drawing.Size(284, 90);
+            this.OutputPS.TabIndex = 8;
+            this.OutputPS.Text = "Here you will see the output for your PowerShell script";
+            this.OutputPS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OutputPS.TextChanged += new System.EventHandler(this.OutputPS_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 534);
+            this.Controls.Add(this.OutputPS);
             this.Controls.Add(this.BrowseBat);
             this.Controls.Add(this.OutputCmd);
             this.Controls.Add(this.ExecuteCommand);
             this.Controls.Add(this.CmdBox);
             this.Controls.Add(this.BrowseButton);
-            this.Controls.Add(this.Output);
             this.Controls.Add(this.Input);
             this.Controls.Add(this.ExecuteScript);
             this.Name = "Form1";
@@ -146,12 +146,12 @@
 
         private System.Windows.Forms.Button ExecuteScript;
         private System.Windows.Forms.TextBox Input;
-        private System.Windows.Forms.TextBox Output;
         private System.Windows.Forms.Button BrowseButton;
         private System.Windows.Forms.TextBox CmdBox;
         private System.Windows.Forms.Button ExecuteCommand;
         private System.Windows.Forms.TextBox OutputCmd;
         private System.Windows.Forms.Button BrowseBat;
+        private System.Windows.Forms.TextBox OutputPS;
     }
 }
 

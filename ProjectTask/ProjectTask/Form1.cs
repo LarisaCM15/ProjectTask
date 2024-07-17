@@ -21,37 +21,47 @@ namespace ProjectTask
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            string scriptPath = Input.Text; 
 
-            
+            string scriptPath = Input.Text;
+
+
             if (File.Exists(scriptPath))
             {
-                
-                var startInfo = new ProcessStartInfo
+
+                var proc = new Process
                 {
-                    FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\"",
-                    UseShellExecute = false
-                   
-
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "powershell.exe",
+                        Arguments = $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\"",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        CreateNoWindow = true
+                    }
                 };
+                proc.Start();
+                while (!proc.StandardOutput.EndOfStream)
+                {
+                    string line = proc.StandardOutput.ReadLine();
+                    OutputPS.Text = line;   
+                }
 
-                Process.Start(startInfo);
-                //Console.Read();
-                
+
+               
+
             }
             else
             {
-                MessageBox.Show("Fișierul nu există sau calea este incorectă.");
+                MessageBox.Show("The file doesn't exist or the path is incorrect.");
             }
         }
 
 
 
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Input_TextChanged(object sender, EventArgs e)
@@ -75,7 +85,32 @@ namespace ProjectTask
 
         private void ExecuteCommand_Click(object sender, EventArgs e)
         {
+            string pathToScript = CmdBox.Text;
 
+            if (File.Exists(pathToScript))
+            {
+                var proc1 = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "cmd.exe",
+                        Arguments = $"/c \"{pathToScript}\"",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true
+                        
+                    }
+                };
+                proc1.Start();
+                while (!proc1.StandardOutput.EndOfStream)
+                {
+                    string line1 = proc1.StandardOutput.ReadLine();
+                    OutputCmd.Text = line1;
+                }
+            }
+            else
+            {
+                MessageBox.Show("The file doesn't exist or the path is incorrect.");
+            }
         }
 
         private void OutputCmd_TextChanged(object sender, EventArgs e)
@@ -89,6 +124,19 @@ namespace ProjectTask
         }
 
         private void BrowseBat_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            fdlg.Title = "Choose a Batch script";
+            fdlg.Filter = "Batch scripts (*.bat)|*.bat|All files (*.*)|*.*";
+            fdlg.FilterIndex = 2;
+            fdlg.RestoreDirectory = true;
+            if (fdlg.ShowDialog() == DialogResult.OK)
+            {
+                CmdBox.Text = fdlg.FileName;
+            }
+        }
+
+        private void OutputPS_TextChanged(object sender, EventArgs e)
         {
 
         }
