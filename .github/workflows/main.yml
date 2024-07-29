@@ -15,7 +15,7 @@ jobs:
           advinst-enable-automation: 'true'
           aip-path: ${{ github.workspace }}\ProjectTaskInstaller.aip
           aip-build-name: DefaultBuild
-          aip-package-name: setup.msi
+          aip-package-name: ProjectTaskInstaller.msi
           aip-output-dir:  ${{ github.workspace }}\setup
           aip-commands: |
             SetProperty FOO="foo"
@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: setup
-          path: ${{ github.workspace }}\setup\setup.msi
+          path: ${{ github.workspace }}\setup\ProjectTaskInstaller.msi
