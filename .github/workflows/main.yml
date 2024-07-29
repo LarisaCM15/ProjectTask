@@ -13,7 +13,7 @@ jobs:
           advinst-version: '21.9'
           advinst-license: ${{ secrets.ADVINST_LICENSE_KEY }}
           advinst-enable-automation: 'true'
-          aip-path: ${{ github.workspace }}\arhitect.aip
+          aip-path: $"C:\Repository\ProjectTaskInstaller.aip"
           aip-build-name: DefaultBuild
           aip-package-name: setup.msi
           aip-output-dir:  ${{ github.workspace }}\setup
