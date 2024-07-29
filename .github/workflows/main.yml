@@ -13,7 +13,7 @@ jobs:
           advinst-version: '21.9'
           advinst-license: ${{ secrets.ADVINST_LICENSE_KEY }}
           advinst-enable-automation: 'true'
-          aip-path: ${{ github.workspace }}\ProjectTaskInstaller.aip
+          aip-path: ${{ github.workspace }}\ProjectTask\ProjectTaskInstaller.aip
           aip-build-name: DefaultBuild
           aip-package-name: ProjectTaskInstaller.exe
           aip-output-dir:  ${{ github.workspace }}\setup
