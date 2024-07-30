@@ -163,7 +163,7 @@
     <ROW Feature_="MainFeature" Component_="ProjectTask.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="ProjectTask.exe" SourcePath="..\Users\Larisa Sirbu 2\Downloads\Screenshot (54).ico" Index="0"/>
+    <ROW Name="ProjectTask_1.exe" SourcePath="ProjectTaskFirst\Screenshot (54).ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -224,7 +224,7 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="ProjectTask" Directory_="DesktopFolder" Name="PROJEC~1|ProjectTask" Component_="ProjectTask.exe" Target="[#ProjectTask.exe]" Hotkey="0" Icon_="ProjectTask.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="ProjectTask" Directory_="DesktopFolder" Name="PROJEC~1|ProjectTask" Component_="ProjectTask.exe" Target="[#ProjectTask.exe]" Hotkey="0" Icon_="ProjectTask_1.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
